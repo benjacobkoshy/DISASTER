@@ -164,7 +164,7 @@ button:hover {
                 <input type="password" placeholder="Password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <button type="submit" name="signup" onclick="submit">Sign Up</button>
+                <button type="submit" name="signup" onclick="submit"><a href="contactAccess.html">Sign Up</a></button>
             </div>
             <div class="log_pass" id="log_pass">
                 <a href="login.php">Login</a>
