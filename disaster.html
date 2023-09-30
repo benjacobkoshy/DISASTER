@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Disaster Information</title>
+    <style>
+        /* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color for the body */
+body {
+    background-color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+/* Header styling */
+header h1{
+    margin-left: -60%;
+}
+header {
+    background-color: #db65eb;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 0;
+}
+.search-container {
+    text-align: right;
+    margin-top: 50px;
+    margin-right: 5px;
+}
+
+/* Style for the search input */
+#search-input {
+    padding: 8px;
+    width: 380px;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: none;
+    border: none;
+}
+
+#home {
+            margin-top: -40px;
+            color: #fff;
+            text-align: center;
+            padding: 0px 60px;
+        }
+#home a {
+            font-size: 30px;
+            width: 50px;
+            height: 30px;
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+            padding: 0px 60px;
+        }
+#home a:hover{
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            color: #000000;
+            font-weight: 20px;
+            border-radius: 3px;
+        }
+
+
+
+
+/* Navigation menu styling */
+nav ul {
+    list-style: none;
+    display: block;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#item-list img{
+    border-radius: 5px;
+}
+#item-list li a{
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 10%;
+    font-size: 30px;
+    color: navy;
+}
+
+#tsunami{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#tsunami:hover{
+    height: 220px;
+    color: #ffffff;
+}
+#earthquake{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#earthquake:hover{
+    height: 220px;
+    color: #ffffff;
+}
+#tornado{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#tornado:hover{
+    height: 220px;
+    color: #ffffff;
+}
+#flood{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#flood:hover{
+    height: 220px;
+    color: #ffffff;
+}
+#wildfires{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#wildfires:hover{
+    height: 220px;
+    color: #ffffff;
+}
+#volcaniceruptions{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#volcaniceruptions:hover{
+    height: 220px;
+    color: #ffffff;
+}
+#droughts{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#droughts:hover{
+    height: 220px;
+    color: #ffffff;
+}
+#landslides{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#landslides:hover{
+    height: 220px;
+    color: #ffffff;
+}
+#winterstorms{
+    width: 80%;
+    height: 180px;
+    box-shadow: 0px 0px 5px 0px #f1b9b9;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+#winterstorms:hover{
+    height: 220px;
+    color: #ffffff;
+}
+
+/* Popup styling */
+
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    height: 60%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #777;
+}
+
+/* Disaster title styling */
+#disaster-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Disaster information styling */
+#disaster-info {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .popup-content {
+        max-width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Disaster Information Center</h1>
+    
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search .....">
+    </div>
+   
+    <nav id="home">
+        <a href="homePage.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Help</a>
+    </nav>
+</header>
+
+
+    <nav>
+        <ul id="item-list">
+            <div class="container">
+               <div id="tsunami">
+                  <li><a href="#" class="disaster-link" data-disaster="tsunami">Tsunami</a></li>
+                  <img src="PIC\5.png" width="100%" height="100%">
+               </div>
+               <div id="earthquake">
+                  <li><a href="#" class="disaster-link" data-disaster="earthquake">Earthquake</a></li>
+                  <img src="PIC\4.png" width="100%" height="100%">
+               </div>
+               <div id="tornado">
+                  <li><a href="#" class="disaster-link" data-disaster="tornado">Tornado</a></li>
+                  <img src="PIC\6.png" width="100%" height="100%">
+               </div>
+               <div id="flood">
+                  <li><a href="#" class="disaster-link" data-disaster="flood">Flood</a></li>
+                  <img src="PIC\7.png" width="100%" height="100%">
+               </div>
+               <div id="wildfires">
+                 <li><a href="#" class="disaster-link" data-disaster="wildfires">Wildfires</a></li>
+                 <img src="PIC\8.jpg" width="100%" height="100%">
+               </div>
+               <div id="volcaniceruptions">
+                 <li><a href="#" class="disaster-link" data-disaster="volcaniceruptions">Volcanic Eruptions</a></li>
+                 <img src="PIC\9.jpg" width="100%" height="100%">
+               </div>
+               <div id="droughts">
+                 <li><a href="#" class="disaster-link" data-disaster="droughts">Droughts</a></li>
+                 <img src="PIC\10.jpg" width="100%" height="100%">
+               </div>
+               <div id="landslides">
+                 <li><a href="#" class="disaster-link" data-disaster="volcaniceruptions">Landslides</a></li>
+                 <img src="PIC\11.jpg" width="100%" height="100%">
+                </div>
+               <div id="winterstorms">
+                <li><a href="#" class="disaster-link" data-disaster="droughts">Winter Storms</a></li>
+                <img src="PIC\12.jpg" width="100%" height="100%"> 
+               </div>
+               <!-- Add more disaster options here -->
+        </div>
+        </ul>
+    </nav>
+    <div class="popup-container" id="disaster-popup">
+        <div class="popup-content">
+            <span class="close-button" id="close-popup">&times;</span>
+            <h2 id="disaster-title">Disaster Title</h2>
+            <div id="disaster-info">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript code for handling the pop-up and loading disaster information
+
+document.addEventListener('DOMContentLoaded', () => {
+    const disasterLinks = document.querySelectorAll('.disaster-link');
+    const popup = document.getElementById('disaster-popup');
+    const closePopup = document.getElementById('close-popup');
+    const disasterTitle = document.getElementById('disaster-title');
+    const disasterInfo = document.getElementById('disaster-info');
+
+    disasterLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const disasterType = link.getAttribute('data-disaster');
+            // You can fetch data for the selected disaster from a server or use predefined data.
+            // For this example, we'll use predefined data.
+            const disasterData = getDisasterData(disasterType);
+
+            disasterTitle.textContent = disasterData.title;
+            disasterInfo.innerHTML = disasterData.description;
+            popup.style.display = 'block';
+        });
+    });
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+});
+
+// Predefined disaster data (you can replace this with your own data)
+function getDisasterData(disasterType) {
+    const disasterData = {
+        'tsunami': {
+            title: 'Tsunami',
+            description: 'Tsunamis are large ocean waves generated by underwater earthquakes...',
+            description: 'How to escape?',
+          /*  description:"Escaping from a tsunami is a life-threatening situation that requires quick thinking and action. Tsunamis can move at incredible speeds and cause massive destruction,so its crucial to be prepared and know what to do in case youre in a coastal area prone to tsunamis. Here are steps to help you escape from a tsunami:",
+            description:'1. Early Warning System: Many coastal regions have tsunami warning systems in place. Pay attention to these systems and alerts from local authorities. Modern technology and communication systems can provide advance notice of a tsunami, giving you more time to react.',
+            description:'2. Know the Signs: Learn the natural warning signs of a tsunami, such as a strong and prolonged earthquake near the coast, a noticeable rapid rise or fall in sea level, or a loud roaring sound coming from the ocean.',
+            description:'3. Evacuation Plan: Have a well-thought-out evacuation plan in place for you and your family. Know the designated evacuation routes, assembly points, and emergency contact information. Local authorities often have this information readily available.',
+            description:'4. ',
+            description:'',
+            description:'',*/
+           
+        },
+        'earthquake': {
+            title: 'Earthquake',
+            description: 'An earthquake is the shaking of the surface of the Earth resulting from...'
+        },
+        'tornado': {
+            title: 'Tornado',
+            description: 'A tornado is a rapidly rotating column of air that is in contact with...'
+        },
+        'flood': {
+            title: 'Flood',
+            description: 'A flood is an overflow of water that submerges land that is usually dry...'
+        },
+        'wildfires': {
+             title: 'WILDFIRE',
+             description:'Uncontrolled fires that spread rapidly through vegetation, often exacerbated by dry conditions and high winds'
+        },
+        'volcaniceruptions': {
+             title: 'VOLCANIC ERUPTIONS',
+             description: 'The eruption of molten rock, ash, and gases from a volcano.'
+        },
+        'droughts': {
+             title: 'DROUGHTS',
+             description: ' Extended periods of abnormally low precipitation, leading to water shortages and crop failures.'
+        },
+        'landslides': {
+             title: 'LANDSLIDES',
+             description: 'The movement of rock, soil, and debris down a slope, often triggered by heavy rainfall or earthquakes.'
+        },
+        'winterstorms': {
+             title: 'WINTERSTORMS',
+             description: 'Severe winter weather events, including heavy snowfall, ice storms, and freezing temperatures.'
+        }
+
+
+        // Add more disaster descriptions here
+    };
+
+    return disasterData[disasterType] || { title: 'Unknown Disaster', description: 'Description not available.' };
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("search-input");
+    const itemList = document.getElementById("item-list");
+    const items = itemList.getElementsByTagName("a");
+
+    searchInput.addEventListener("input", function () {
+        const searchTerm = searchInput.value.toUpperCase();
+
+        for (let i = 0; i < items.length; i++) {
+            const itemText = items[i].textContent.toUpperCase();
+            if (itemText.includes(searchTerm)) {
+                // Highlight matched text
+                items[i].innerHTML = itemText.replace(
+                    new RegExp(searchTerm, "gi"),
+                    (match) => `<span class="highlight">${match}</span>`
+                );
+                items[i].style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif";
+                items[i].style.display = "block";
+                items[i].style.fontSize = "40px";
+                items[i].style.color = "#db65eb";
+            } else {
+                items[i].innerHTML = itemText;
+                items[i].style.display = "none";
+            }
+        }
+    });
+});
+    </script>
+</body>
+</html>

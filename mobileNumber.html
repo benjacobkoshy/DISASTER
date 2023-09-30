@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Popup Example</title>
+    <style>
+        body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url('background-image.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.blur-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Adds a background blur effect */
+}
+
+.popup {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button{
+            margin-top: 16px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #0056b3;
+        }
+
+#details-container {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+.container1{
+            width: 500px;
+            height: 150px;
+            box-shadow: 0px 0px 5px 0px #ccc;
+            text-align: center;
+            padding: 20px 20px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            margin-top: 10%;
+            border-radius: 4px;
+        }
+.container1 input{
+    width: 60%;
+    margin-top: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 0px #ccc;
+}
+input{
+    height: 20px;
+}
+option{
+    height: 30px;
+}
+    </style>
+</head>
+<body>
+    <div class="blur-background" id="popup-container">
+        <div class="popup">
+            <h2>Website Permission</h2>
+            <p>As a part of your
+                safety,we are 
+                collecting three
+                contact details.
+                Do you want to
+                share it with us</p>
+            <div class="button-container">
+                <button id="allow-button">Allow</button>
+                <button id="deny-button">Deny</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="details-container" class="hidden">
+        <div class="container1">
+           <h2>Contact 1</h2>
+           <form action="">
+              <input type="text" placeholder="Name" name="name1" required>
+              <label class="list1">Relation:</label>
+                 <select id="list1" name="list_1">
+                   <option value="">Parent</option>
+                   <option value="">Relative</option>
+                   <option value="">Friend</option>
+                </select>
+              <input type="tel" placeholder="Number" name="number1" required>
+           </form>
+        </div>
+
+        <div class="container1">
+            <h2>Contact 2</h2>
+            <form action="">
+               <input type="text" placeholder="Name" name="name1" required>
+               <label class="list1">Relation:</label>
+                  <select id="list1" name="list_1">
+                    <option value="">Parent</option>
+                    <option value="">Relative</option>
+                    <option value="">Friend</option>
+                 </select>
+               <input type="tel" placeholder="Number" name="number1" minlength="10" maxlength="12" required>
+            </form>
+         </div>
+
+         <div class="container1">
+            <h2>Contact 3</h2>
+            <form action="">
+               <input type="text" placeholder="Name" name="name1" minlength="10" maxlength="12" required>
+               <label class="list1">Relation:</label>
+                  <select id="list1" name="list_1">
+                    <option value="">Parent</option>
+                    <option value="">Relative</option>
+                    <option value="">Friend</option>
+                 </select>
+               <input type="tel" placeholder="Number" name="number1" minlength="10" maxlength="12" required>
+            </form>
+         </div>
+
+         <button type="submit" id="grant" onclick="Submit()">Submit</button>
+    </div>
+
+
+
+
+
+
+    <script >
+        const popupContainer = document.getElementById("popup-container");
+        const allowButton = document.getElementById("allow-button");
+        const denyButton = document.getElementById("deny-button");
+        const detailsContainer = document.getElementById("details-container");
+
+        allowButton.addEventListener("click", () => {
+         popupContainer.style.display = "none"; // Hide the popup
+        detailsContainer.style.display = "block"; // Show the details
+         // You can add code here to display website details.
+        });
+
+        denyButton.addEventListener("click", () => {
+          popupContainer.style.display = "none"; // Hide the popup
+          alert("Sorry for inconvieneinec. You can leave this page.");
+        });
+
+        // You can add code to fetch and display website details inside the detailsContainer.
+         
+        function Submit(){
+             alert("Thankyou for your time");
+             window.location.href = "homePage.html";
+        }
+    </script>
+</body>
+</html>

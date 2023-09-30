@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px;
+        }
+        header img:hover{
+            width: 170px;
+            height: 120px;
+        }
+        nav {
+            margin-top: -40px;
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 0px 60px;
+        }
+        nav a {
+            font-size: 30px;
+            width: 50px;
+            height: 30px;
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+            padding: 0px 60px;
+        }
+        nav a:hover{
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            color: #000000;
+            font-weight: 20px;
+            border-radius: 3px;
+        }
+        .container {
+            margin-top: 30px;
+            max-width: 80%;
+            height: 800px;
+            margin: 20px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .options1 , .options2 {
+            text-align: center;
+            margin: 20px 0;
+            margin-left: 5%;
+            padding: 40px 40px;
+        }
+        .options1 a {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            height: 250px;
+            width: 250px;
+            margin-bottom: 5px;
+        }
+        .options2 a {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            height: 250px;
+            width: 250px;
+            margin-top: 50px;
+        }
+        .options1 a h2{
+            margin-top: 200px;
+        }
+
+        .options2 a h2{
+            margin-top: 200px;
+        }
+        #emerg{
+            background-color: rgb(211, 18, 18);
+        }
+        #emerg h2{
+            margin-top: 30px;
+        }
+        #emerg i{
+            font-size: 160px;
+            margin-top: 20px;
+        }
+        #emerg:hover{
+            background-color: rgb(255, 38, 0);
+            font-size: 22px;
+        }
+
+        #cwb{
+            background-color: rgb(63, 243, 18);
+        }
+        #cwb h2{
+            margin-top: 30px;
+        }
+        #cwb i{
+            font-size: 160px;
+            margin-top: 20px;
+        }
+        #cwb:hover{
+            background-color: rgb(0, 255, 115);
+            font-size: 20px;
+        }
+
+        #gis{
+            background-color: rgb(106, 5, 240);
+        }
+        #gis h2{
+            margin-top: 30px;
+        }
+        #gis i{
+            font-size: 160px;
+            margin-top: 20px;
+        }
+        #gis:hover{
+            background-color: rgb(202, 28, 255);
+            font-size: 20px;
+        }
+
+        #dm{
+            background-color: rgba(233, 153, 3, 0.897);
+        }
+        #dm h2{
+            margin-top: 30px;
+        }
+        #dm i{
+            font-size: 160px;
+            margin-top: 20px;
+        }
+        #dm:hover{
+            background-color: rgb(255, 231, 16);
+            font-size: 20px;
+        }
+
+
+   </style>
+</head>
+<body>
+    <header>
+        <img src="PIC\DG-logo.png" width="150px" height="100px">
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Help</a>
+    </nav>
+    <div class="container">
+        <div class="options1">
+            <a href="#" id="emerg"><i class="fa-solid fa-kit-medical" ></i><h2>EMERGENCY</h2></a>
+            <a href="https://www.google.com/maps/@10.2247347,75.6999821,7.75z?entry=ttu" classs="gis" id="gis"><i class="fa-solid fa-map"></i><h2>GIS</h2></a>
+        </div>
+        <div class="options2">
+            <a href="https://chat.openai.com/c/6bbbd58b-fd94-46b3-a20d-f7da18910bdf" class="cwb" id="cwb"><i class="fa-solid fa-robot"></i><h2>CHAT WITH BOT</h2></a>
+            <a href="#" class="dm" id="dm"><i class="fa-solid fa-house-crack"></i><h2>DISASTER </h2></a>
+        </div>
+        <!-- Add more content here as needed -->
+    </div>
+</body>
+</html>
